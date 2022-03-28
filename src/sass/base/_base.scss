@@ -1,0 +1,13 @@
+@use '../utils' as *;
+html
+{
+    font-size: 62.5%;
+}
+body
+{
+    background-color: tomato;
+    @include respond-to('m')
+    {
+        background-color: royalblue;
+    }
+}
