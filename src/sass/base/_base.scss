@@ -1,13 +1,15 @@
 @use '../utils' as *;
+@use  './typography' as *;
 html
 {
     font-size: 62.5%;
 }
 body
 {
-    background-color: tomato;
-    @include respond-to('m')
-    {
-        background-color: royalblue;
-    }
+    font-size: $standard;
+    font-family: $family;
+    // @include respond-to('m')
+    // {
+    //     background-color: royalblue;
+    // }
 }
