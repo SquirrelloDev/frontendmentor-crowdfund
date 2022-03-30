@@ -1,0 +1,50 @@
+@use '../utils/colors' as *;
+@use '../base/typography' as *;
+.card
+{
+    margin: 1em 0;
+    padding: 2em;
+    border: 1px solid $v-light-gray;
+    background-color: $white;
+    border-radius: 6px;
+    &--intro
+    {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    width: 85%;
+    transform: translateX(-50%);
+    [alt="mastercraft logo"]
+    {
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    }
+    &__heading
+    {
+        margin: 0.75em 0;
+        font-size: calc($standard + .3rem);
+        &--intro
+        {
+            text-align: center;
+        }
+    }
+    &__text
+    {
+        color: $dark-gray;
+        font-size: $standard;
+        line-height: 22px;
+        &--intro
+        {
+            text-align: center;
+        }
+    }
+    &__buttons-box
+    {
+        margin-top: 1em;
+        display: flex;
+        justify-content: space-between;
+    }
+}
