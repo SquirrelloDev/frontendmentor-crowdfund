@@ -6,10 +6,8 @@ html
 }
 body
 {
+    position: relative;
+    min-height: 100vh;
     font-size: $standard;
     font-family: $family;
-    // @include respond-to('m')
-    // {
-    //     background-color: royalblue;
-    // }
 }

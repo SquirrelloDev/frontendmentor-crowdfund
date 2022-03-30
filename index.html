@@ -8,17 +8,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./dist/css/main-min.css">
-    <script src="'./dist/js/main-min.js" defer></script>
+    <script src="./dist/js/main-min.js" defer></script>
     <title>Crowdfund | New way to experience crowdfunding</title>
 </head>
 <body>
     <nav class="nav nav-mobile">
-        <a href="#"><img src="./dist/img/logo.svg" alt="crowdfund logo"></a>
+        <a href="#" class="nav__logo"><img src="./dist/img/logo.svg" alt="crowdfund logo"></a>
         <button class="nav__burger"><img src="./dist/img/icon-hamburger.svg" alt="Expand navigation button"></button>
-        <div class="nav nav-mobile__block">
-            <a href="#">About</a>
-            <a href="#">Discover</a>
-            <a href="#">Get Started</a>
+        <div class="nav nav-mobile__block active-block">
+            <a href="#" class="nav__link">About</a>
+            <a href="#" class="nav__link">Discover</a>
+            <a href="#" class="nav__link">Get Started</a>
         </div>
     </nav>
     <nav class="nav nav-desktop">
@@ -30,6 +30,7 @@
     </nav>
     <header class="header">
         <div class="hero"></div>
+        <div class="hero__mask"></div>
     </header>
     <main class="wrapper">
         <div class="card card--intro">
