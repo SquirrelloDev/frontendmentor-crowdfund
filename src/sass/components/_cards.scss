@@ -3,7 +3,9 @@
 .card
 {
     margin: 1em 0;
-    padding: 2em;
+    padding: 1.5em;
+    width: 100%;
+    max-width: 800px;
     border: 1px solid $v-light-gray;
     background-color: $white;
     border-radius: 6px;
@@ -35,7 +37,7 @@
     {
         color: $dark-gray;
         font-size: $standard;
-        line-height: 22px;
+        line-height: 23px;
         &--intro
         {
             text-align: center;
@@ -83,6 +85,68 @@
                     @extend .card__progressbar;
                     background-color: $mod-cyan;
                     width: 75%;
+                }
+            }
+        }
+    }
+    &--about
+    {
+        .card
+        {
+            &__text
+            {
+                &--second-paragraph
+                {
+                    margin: 1.5em 0;
+                }
+            }
+        }
+    }
+    &--pledge
+    {
+        .card
+        {
+            &__heading
+            {
+                margin-bottom: 0.5em;
+                font-size: $standard;
+            }
+            &__pledge-text
+            {
+                margin-bottom: 1.25em;
+                font-size: $standard;
+                color: $mod-cyan;
+                font-weight: $regular;
+            }
+            &__text
+            {
+                margin-bottom: 1.5em;
+            }
+            &__items-left
+            {
+                margin-bottom: 1.5em;
+                color: $dark-gray;
+                .counter
+                {
+                    margin-right: 0.1em;
+                    font-size: calc($large + .5rem);
+                    font-weight: $bold;
+                    color: $black;
+                }
+            }
+        }
+        &--disabled
+        {
+            opacity: .5;
+            filter: grayscale(100%);
+            .card
+            {
+                &__button
+                {
+                    &--disabled
+                    {
+                        cursor: not-allowed;
+                    }
                 }
             }
         }
