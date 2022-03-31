@@ -2,11 +2,13 @@
 @use '../base/typography' as *;
 .modal
 {
+
     position: fixed;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1001;
-    margin: 1.5em;
+    width: 80%;
     padding: 1.5em;
     background-color: $white;
     border-radius: 8px;
@@ -37,7 +39,6 @@
     }
     &__body
     {
-
     }
     &__confirm
     {
