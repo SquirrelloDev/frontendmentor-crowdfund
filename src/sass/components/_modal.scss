@@ -1,0 +1,53 @@
+@use '../utils/colors' as *;
+@use '../base/typography' as *;
+.modal
+{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+    margin: 1.5em;
+    padding: 1.5em;
+    background-color: $white;
+    border-radius: 8px;
+    &__shadow
+    {
+        display: none;
+        &--active
+        {
+            display: block;
+            position: absolute;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            min-height: 100%;
+            background-color: rgba(0, 0, 0, .6);
+        }
+    }
+    &__back
+    {
+        height: 80vh;
+        overflow-y: auto;
+    }
+    &__header
+    {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__body
+    {
+
+    }
+    &__confirm
+    {
+        display: none;
+    }
+    &__close
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: .5em;
+    }
+}
