@@ -28,7 +28,7 @@
     }
     &__back
     {
-        
+        display: none;
         height: 80vh;
         overflow-y: auto;
     }
@@ -171,6 +171,32 @@
     &__confirm
     {
         display: none;
+        // display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__heading
+        {
+            margin: 1em 0;
+        }
+        &__text
+        {
+            margin: .75em 0;
+            padding: 0 0.5em;
+            text-align: center;
+            color: $dark-gray;
+        }
+        &__btn
+        {
+            margin-top: 1em;
+            padding: 1em 2em;
+            border: 1px solid transparent;
+            border-radius: 24px;
+            background-color: $mod-cyan;
+            color: $white;
+            font-size: $standard;
+            font-weight: $bold;
+
+        }
     }
     &__close
     {
@@ -181,4 +207,5 @@
         border: 1px solid transparent;
         background: none;
     }
+
 }
