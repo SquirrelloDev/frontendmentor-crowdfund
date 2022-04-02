@@ -28,6 +28,7 @@
     }
     &__back
     {
+        
         height: 80vh;
         overflow-y: auto;
     }
@@ -41,6 +42,7 @@
     {
         display: flex;
         flex-direction: column;
+        align-items: center;
         &__text
         {
             margin-top: 1em;
@@ -48,6 +50,7 @@
         }
         .card
         {
+            position: relative;
             input[type=radio]
             {
                 appearance: none;
@@ -79,9 +82,36 @@
             {
                 margin-left: 1em;
                 font-size: calc($tiny + .1rem);
+                &:not(:first-child)
+                {
+                    align-self: flex-start;
+                }
                 &--pledge-info
                 {
-                    margin: 0em 0em .5em 2.5em;
+                    margin: -0.5em 1em 1em 1em;
+                    color: $mod-cyan;
+                    font-weight: $regular;
+                    
+                }
+            }
+            &__text
+            {
+                margin-bottom: 1.2em;
+                font-size: calc($standard - .1rem);
+            }
+            &--disabled
+            {
+                opacity: .5;
+                filter: grayscale(100%);
+            }
+            &__items-left
+            {
+                color: $dark-gray;
+                .counter
+                {
+                    color: $black;
+                    font-size: $large;
+                    font-weight: $bold;
                 }
             }
             .clickable
@@ -89,6 +119,52 @@
                 display: flex;
                 align-items: center;
                 width: 100%;
+            }
+            &__pledge-manager
+            {
+                display: none;
+                margin: 1em 0;
+                padding: 1em 0;
+                width: 100%;
+                border: none;
+                border-top: 1px solid $v-light-gray;
+                border-radius: 0;
+                text-align: center;
+            }
+            .input-info
+            {
+                position: relative;
+                display: flex;
+                justify-content: space-around;
+                input[type=number]
+                {
+                    position: relative;
+                    z-index: 0;
+                    width: 45%;
+                    padding: 1em;
+                    padding-left: 2em;
+                    border-radius: 24px;
+                    border: 1px solid $v-light-gray;
+                }
+                input[type=submit]
+                {
+                    margin-left: .5em;
+                    padding: 1em;
+                    border-radius: 24px;
+                    background-color: $mod-cyan;
+                    border: 1px solid transparent;
+                    color: $white;
+                    font-size: $standard;
+                }
+                &::after
+                {
+                    content: '$';
+                    position: absolute;
+                    top: 45%;
+                    left: 8%;
+                    transform: translate(-50%,-50%);
+                    color: $dark-gray;
+                }
             }
         }
     }
