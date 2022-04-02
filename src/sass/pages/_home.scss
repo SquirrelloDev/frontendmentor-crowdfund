@@ -14,7 +14,6 @@
         &__block
         {
             display: none;
-
         }
         .active-block
         {
@@ -23,6 +22,7 @@
             left: 50%;
             z-index: 100;
             transform: translateX(-50%);
+            transition: transform .3s;
             display: flex;
             flex-direction: column;
             width: 85%;
@@ -53,6 +53,7 @@
         padding: 1em;
         border: 1px solid transparent;
         background: none;
+        cursor: pointer;
         
     }
     &__link

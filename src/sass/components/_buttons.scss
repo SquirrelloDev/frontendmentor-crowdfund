@@ -10,7 +10,9 @@
         border-radius: 30px;
         color: $white;
         font-weight: $bold;
+        font-size: $tiny;
         transition: background-color .3s;
+        text-decoration: none;
         cursor: pointer;
         &:hover
         {

@@ -28,9 +28,13 @@
     }
     &__back
     {
-        // display: none;
+        display: none;
         height: 80vh;
         overflow-y: auto;
+        &--active
+        {
+            display: block;
+        }
     }
     &__header
     {
