@@ -10,9 +10,15 @@
         border-radius: 30px;
         color: $white;
         font-weight: $bold;
+        transition: background-color .3s;
         cursor: pointer;
+        &:hover
+        {
+            background-color: $dark-cyan;
+        }
         &--bookmark
         {
+            
             padding: 0;
             margin: 0 1em;
             width: 45px;

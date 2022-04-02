@@ -28,7 +28,7 @@
     }
     &__back
     {
-        display: none;
+        // display: none;
         height: 80vh;
         overflow-y: auto;
     }
@@ -51,6 +51,15 @@
         .card
         {
             position: relative;
+            cursor: pointer;
+            &:hover input[type=radio]
+            {
+                border-color: $mod-cyan;
+            }
+            &:hover .card__heading
+            {
+                color: $mod-cyan;
+            }
             input[type=radio]
             {
                 appearance: none;
@@ -61,7 +70,9 @@
                 width: 1.75em;
                 height: 1.75em;
                 border: 1px solid $dark-gray;
+                transition: border-color .1s;
                 border-radius: 50%;
+                cursor: pointer;
                 &::before
                 {
                     content: "";
@@ -82,10 +93,7 @@
             {
                 margin-left: 1em;
                 font-size: calc($tiny + .1rem);
-                &:not(:first-child)
-                {
-                    align-self: flex-start;
-                }
+                transition: color .1s;
                 &--pledge-info
                 {
                     margin: -0.5em 1em 1em 1em;
@@ -206,6 +214,7 @@
         padding: .5em;
         border: 1px solid transparent;
         background: none;
+        cursor: pointer;
     }
 
 }
