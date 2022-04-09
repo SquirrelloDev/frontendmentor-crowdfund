@@ -1,4 +1,3 @@
-
 const burgerBtn = document.querySelector('.nav__burger');
 const mobileNav = document.querySelector('.nav-mobile__block');
 const pledgeModal = document.querySelector('.modal__back');
