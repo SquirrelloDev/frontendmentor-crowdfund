@@ -36,16 +36,17 @@ const filterCards = () => {
         })
     return cards;
 }
+
 let previos;
+function changeFocus() {
+    if (previos != null) {
+        previos.style.borderColor = 'hsl(0,0%,90%)';
+        previos.querySelector('.card__pledge-manager') == null ? '' : previos.querySelector('.card__pledge-manager').style.display = 'none';
+    }
+    this.style.borderColor = 'hsl(176, 50%, 47%)';
+    this.querySelector('.card__pledge-manager') == null ? '' : this.querySelector('.card__pledge-manager').style.display = 'block';
+    previos = this;
+}
 modalCards = filterCards();
-modalCards.forEach(card =>{
-    card.addEventListener('click', function(e){
-        if(previos != null)
-        {
-            previos.style.borderColor = 'hsl(0,0%,90%)';
-        }
-        this.style.borderColor = 'hsl(176, 50%, 47%)';
-        previos = this;
-        // console.log(this);
-    })
-})
+modalCards.forEach(card => card.addEventListener('click', changeFocus))
+

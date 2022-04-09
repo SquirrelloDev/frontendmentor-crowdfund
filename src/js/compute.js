@@ -34,4 +34,4 @@ const addMoneyAndBacker = (moneyAmount) => {
     
     computeBackedMoney(100);
 }
-addMoneyAndBacker(25);
+// addMoneyAndBacker(25);
