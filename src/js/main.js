@@ -4,6 +4,7 @@ const pledgeModal = document.querySelector('.modal__back');
 const modalShadow = document.querySelector('.modal__shadow');
 const allRewardBtns = document.querySelectorAll('.card--pledge .card__button');
 const modalClose = pledgeModal.querySelector('.modal__close');
+
 let modalCards = Array.from(pledgeModal.querySelectorAll('.card'));
 //Show and close modals and menu
 const mobileMenuHandler = () => {
@@ -47,5 +48,4 @@ function changeFocus() {
     previos = this;
 }
 modalCards = filterCards();
-modalCards.forEach(card => card.addEventListener('click', changeFocus))
-
+modalCards.forEach(card => card.addEventListener('click', changeFocus));

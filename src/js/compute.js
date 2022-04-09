@@ -1,10 +1,14 @@
+
 const daysLeft = document.querySelector('.card__days');
 const moneyGathered= document.querySelector('.card__money');
 const barFill = document.querySelector('.card__progressbar--fill');
 const backersTotal = document.querySelector('.card__backers');
 const continueButtons= document.querySelectorAll('input[data-tier]');
 const itemsLeft= document.querySelectorAll('.counter');
-
+const pledgeModal = document.querySelector('.modal__back');
+const modalConfirm = document.querySelector('.modal__confirm');
+const modalConfirmBtn = modalConfirm.querySelector('.modal__confirm__btn');
+const modalShadow = document.querySelector('.modal__shadow');
 const rewards = [
     {
         name: 'Bamboo',
@@ -58,6 +62,17 @@ const addMoneyAndBacker = (moneyAmount) => {
     computeBackedMoney(100);
 }
 //reawrds
+const confirmPledge = () => {
+    if(pledgeModal.classList.contains('modal__back--active') || modalShadow.classList.contains('modal__shadow--active'))
+    {
+        pledgeModal.classList.remove('modal__back--active');
+        modalConfirm.classList.add('modal__confirm--active');
+    }
+}
+const closeConfirm = () => {
+    modalConfirm.classList.remove('modal__confirm--active');
+    modalShadow.classList.remove('modal__shadow--active');
+}
 const handleOrder = (e) => {
     e.preventDefault();
     if (rewards[e.target.dataset.tier].left <= 0) {
@@ -68,6 +83,8 @@ const handleOrder = (e) => {
     rewards[e.target.dataset.tier].left--;
     itemsLeft[e.target.dataset.tier].textContent = rewards[e.target.dataset.tier].left;
     itemsLeft[parseInt(e.target.dataset.tier) + 3].textContent = rewards[e.target.dataset.tier].left;
+    confirmPledge();
     
 }
-continueButtons.forEach(btn => btn.addEventListener('click', handleOrder))
+continueButtons.forEach(btn => btn.addEventListener('click', handleOrder));
+modalConfirmBtn.addEventListener('click', closeConfirm)

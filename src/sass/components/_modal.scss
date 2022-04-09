@@ -183,7 +183,6 @@
     &__confirm
     {
         display: none;
-        // display: flex;
         flex-direction: column;
         align-items: center;
         &__heading
@@ -208,6 +207,10 @@
             font-size: $standard;
             font-weight: $bold;
 
+        }
+        &--active
+        {
+            display: flex;
         }
     }
     &__close
