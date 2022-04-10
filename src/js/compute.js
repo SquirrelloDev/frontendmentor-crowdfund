@@ -83,8 +83,25 @@ const handleOrder = (e) => {
     rewards[e.target.dataset.tier].left--;
     itemsLeft[e.target.dataset.tier].textContent = rewards[e.target.dataset.tier].left;
     itemsLeft[parseInt(e.target.dataset.tier) + 3].textContent = rewards[e.target.dataset.tier].left;
+    localStorage.setItem(`tier${e.target.dataset.tier}-left`, rewards[e.target.dataset.tier].left);
     confirmPledge();
     
 }
+const getItemsStock = () => {
+    rewards.forEach((reward, index) => reward.left = parseInt(localStorage.getItem(`tier${index}-left`)) || parseInt(itemsLeft[index].textContent));
+    itemsLeft.forEach((item, index)=> index >= 3 ? item.textContent = rewards[index-3].left : item.textContent = rewards[index].left);
+    console.log(rewards);
+}
 continueButtons.forEach(btn => btn.addEventListener('click', handleOrder));
-modalConfirmBtn.addEventListener('click', closeConfirm)
+modalConfirmBtn.addEventListener('click', closeConfirm);
+getItemsStock();
+
+function fetchMoney() {
+    if(!localStorage.getItem('amount') || !localStorage.getItem('backers'))
+    {
+        return;
+    }
+    moneyGathered.textContent = `$${parseInt(localStorage.getItem('amount')).toLocaleString()}`;
+    backersTotal.textContent = `${localStorage.getItem('backers')}`;
+}
+fetchMoney();
