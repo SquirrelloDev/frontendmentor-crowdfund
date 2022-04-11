@@ -1,8 +1,7 @@
-@use '../utils/colors' as *;
+@use '../utils' as *;
 @use '../base/typography' as *;
 .modal
 {
-
     position: fixed;
     top: 50%;
     left: 50%;
@@ -31,6 +30,7 @@
         display: none;
         height: 80vh;
         overflow-y: auto;
+        max-width: 800px;
         &--active
         {
             display: block;
@@ -47,9 +47,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        
         &__text
         {
             margin-top: 1em;
+            align-self: flex-start;
             color: $dark-gray;
         }
         .card
@@ -142,6 +144,12 @@
                 border-top: 1px solid $v-light-gray;
                 border-radius: 0;
                 text-align: center;
+                @include respond-to('m')
+                {
+                    justify-content: space-between;
+                    align-items: center;
+                    
+                }
             }
             .input-info
             {
@@ -179,6 +187,12 @@
                 }
             }
         }
+    }
+    &__form
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     &__confirm
     {
@@ -218,7 +232,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: .5em;
+        padding: 1em;
         border: 1px solid transparent;
         background: none;
         cursor: pointer;

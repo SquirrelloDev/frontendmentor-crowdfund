@@ -44,7 +44,7 @@ function changeFocus() {
         previos.querySelector('.card__pledge-manager') == null ? '' : previos.querySelector('.card__pledge-manager').style.display = 'none';
     }
     this.style.borderColor = 'hsl(176, 50%, 47%)';
-    this.querySelector('.card__pledge-manager') == null ? '' : this.querySelector('.card__pledge-manager').style.display = 'block';
+    this.querySelector('.card__pledge-manager') == null ? '' : this.querySelector('.card__pledge-manager').style.display = 'flex';
     previos = this;
 }
 modalCards = filterCards();
