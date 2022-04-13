@@ -201,6 +201,7 @@
                     border: 1px solid transparent;
                     color: $white;
                     font-size: $standard;
+                    cursor: pointer;
                 }
             }
         }
@@ -216,6 +217,7 @@
         display: none;
         flex-direction: column;
         align-items: center;
+        max-width: 800px;
         &__heading
         {
             margin: 1em 0;
@@ -237,6 +239,7 @@
             color: $white;
             font-size: $standard;
             font-weight: $bold;
+            cursor: pointer;
 
         }
         &--active

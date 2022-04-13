@@ -1,4 +1,4 @@
-@use '../utils/colors' as *;
+@use '../utils' as *;
 @use '../base/typography' as *;
 .card
 {
@@ -28,6 +28,10 @@
             grid-area: 2/3/1/2;
             background: none;
             border-radius: 50%;
+            @include respond-to('m')
+            {
+                display: none;
+            }
             img
             {
                 width: 100%;
@@ -36,6 +40,31 @@
             &--desktop
             {
                 display: none;
+                position: relative;
+                background-color: $v-light-gray;
+                color: $dark-gray;
+                padding-left: 2.8em;
+                padding-top: 1em;
+                &:hover
+                {
+                    background-color: $v-light-gray;
+                    color: $dark-gray;
+                }
+                img
+                {
+                    position: absolute;
+                    top: 50%;
+                    left: 15%;
+                    transform: translate(-50%,-50%) scale(.75);
+                }
+                .bookmark-text
+                {
+                    margin-left: .75em;
+                }
+                @include respond-to('m')
+                {
+                    display: block;
+                }
             }
         }
     }
