@@ -44,8 +44,19 @@ function changeFocus() {
         previos.querySelector('.card__pledge-manager') == null ? '' : previos.querySelector('.card__pledge-manager').style.display = 'none';
     }
     this.style.borderColor = 'hsl(176, 50%, 47%)';
-    this.querySelector('.card__pledge-manager') == null ? '' : this.querySelector('.card__pledge-manager').style.display = 'flex';
+    if(window.innerWidth >= 768)
+    {
+        this.querySelector('.card__pledge-manager') == null ? '' : this.querySelector('.card__pledge-manager').style.display = 'flex';
+    }
+    else
+    {
+        this.querySelector('.card__pledge-manager') == null ? '' : this.querySelector('.card__pledge-manager').style.display = 'block';
+    }
     previos = this;
 }
+window.addEventListener('resize', ()=>
+{
+    window.innerWidth >= 768 ? previos.querySelector('.card__pledge-manager').style.display = 'flex' : previos.querySelector('.card__pledge-manager').style.display = 'block'
+})
 modalCards = filterCards();
 modalCards.forEach(card => card.addEventListener('click', changeFocus));

@@ -112,6 +112,10 @@
             {
                 margin-bottom: 1.2em;
                 font-size: calc($standard - .1rem);
+                @include respond-to('m')
+                {
+                    margin-bottom: 0;
+                }
             }
             &--disabled
             {
@@ -147,10 +151,10 @@
                 @include respond-to('m')
                 {
                     justify-content: space-between;
-                    align-items: center;
-                    
+                    align-items: center;                  
                 }
             }
+
             .input-info
             {
                 position: relative;
@@ -165,6 +169,28 @@
                     padding-left: 2em;
                     border-radius: 24px;
                     border: 1px solid $v-light-gray;
+                    font-weight: $bold;
+                    &:focus
+                    {
+                        outline: $mod-cyan solid 1px;
+                    }
+                    
+                }
+                &::after
+                {
+                    content: '$';
+                    position: absolute;
+                    top: 47%;
+                    left: 8%;
+                    transform: translateY(-50%);
+                    @include respond-to('s')
+                    {
+                        left: 10%;
+                    }
+                    @include respond-to('m')
+                    {
+                        left: 6%;
+                    }
                 }
                 input[type=submit]
                 {
@@ -175,15 +201,6 @@
                     border: 1px solid transparent;
                     color: $white;
                     font-size: $standard;
-                }
-                &::after
-                {
-                    content: '$';
-                    position: absolute;
-                    top: 45%;
-                    left: 8%;
-                    transform: translate(-50%,-50%);
-                    color: $dark-gray;
                 }
             }
         }
@@ -239,3 +256,4 @@
     }
 
 }
+
